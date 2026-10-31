@@ -1,1 +1,25 @@
+TERMINAL_LOG
+Terraform Plan
+terraform -chdir=terraform plan
+Result:
 
+<copy the output from your successful terraform plan here>
+Cost Tag Validation - Run 1
+python scripts/cost_tag_check.py fixtures/plan.json
+Output:
+
+Resources missing landlord_account_id tag:
+- aws_lambda_function.mls_feed_sync
+- aws_s3_bucket.listing_media
+Cost Tag Validation - Run 2
+python scripts/cost_tag_check.py fixtures/plan.json
+Output:
+
+Resources missing landlord_account_id tag:
+- aws_lambda_function.mls_feed_sync
+- aws_s3_bucket.listing_media
+Access Control Tests
+python -m pytest
+Output:
+
+<paste pytest output here>
